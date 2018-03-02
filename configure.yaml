@@ -1,0 +1,33 @@
+reference:
+    fa_file: "/home/yaneng/RSun/Data/NGS2017_09_25/target_Lung_Colon103-amplicon.refSeq.fa"
+input_data:
+    input_dir: "/home/yaneng/RSun/Data/NGS2017_09_25/lung_colon/"
+    libraries: 
+        library_01:
+            location: "undetermined/"
+            library_id: "S0634_03A_CHG026729"
+            sample_name: "YN-170925-092519-ACAAACGG"
+            read1: "_L003_R1.fastq"
+            read2: "_L003_R2.fastq"
+        library_02:
+            location: "undetermined/"
+            library_id: "S0634_03A_CHG026729"
+            sample_name: "YN-170925-092520-ACCCAGCA"
+            read1: "_L003_R1.fastq"
+            read2: "_L003_R2.fastq"
+logging: "/home/yaneng/RSun/Data/NGS2017_09_25/lung_colon/log/"
+alignment:
+    software: "/home/yaneng/RSun/Softwares/bwa/bwa"
+    ref_index: "/home/yaneng/RSun/Softwares/bwa/YN_Lung_Conlon0925"
+    num_threads: 4
+    output_dir: "aligned/"
+sorting:
+    software: "/home/yaneng/RSun/Softwares/picard/picard.jar"
+snv_calling:
+    software: "/home/yaneng/RSun/Softwares/GenomeAnalysisTK.jar"
+    knownsites:
+        dbSNP: "/home/yaneng/RSun/Data/NGS2017_09_25/Lung_Colon103-SNV-sorted.vcf"
+    threshold: 30
+    output_dir: "snvCalled/"
+genotype_joining:
+    output_name : "lung_colon_joint"
